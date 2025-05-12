@@ -1,0 +1,110 @@
+@import "tailwindcss";
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/preflight.css" layer(base);
+@import "tailwindcss/utilities" layer(utilities);
+
+@layer theme, base, components, utilities;
+
+@theme {
+  --color-primary: #A7D129;
+  /* Soft Lime Green */
+  --color-primary-light: #C5E96E;
+  /* Lighter Lime Green */
+  --color-primary-dark: #6E8C13;
+  /* Deeper Lime */
+
+  --color-secondary: #FFB400;
+  /* Warm Amber */
+  --color-secondary-light: #FFD166;
+  /* Soft Yellow */
+  --color-secondary-dark: #D99000;
+  /* Deep Amber */
+
+  --color-accent: #0099CC;
+  /* Cool Teal */
+  --color-accent-light: #66C2E0;
+  /* Light Sky Blue */
+  --color-accent-dark: #007199;
+  /* Deep Teal */
+
+  --color-bg: #F9FAFB;
+  /* Soft Gray Background */
+  --color-bg-dark: #1E1E1E;
+  /* Dark Mode Background */
+  --color-text: #222222;
+  /* Rich Black for Text */
+  --color-text-light: #6B7280;
+  /* Subtle Gray for Light Text */
+}
+
+/* Base Styles */
+@layer base {
+  body {
+    @apply font-sans text-text bg-bg;
+  }
+
+  h1 {
+    @apply text-3xl font-semibold;
+  }
+
+  h2 {
+    @apply text-2xl font-semibold;
+  }
+
+  h3 {
+    @apply text-xl font-semibold;
+  }
+
+  h4 {
+    @apply text-lg font-semibold;
+  }
+
+  label {
+    @apply block font-medium mt-4;
+  }
+
+  button {
+    @apply px-6 py-2 rounded-md bg-primary-dark text-white
+  }
+
+  input, textarea {
+    @apply mt-1 block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary;
+  }
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .header-height {
+    @apply h-20;
+  }
+
+  .content-height {
+    @apply h-[calc(100vh-5rem)];
+  }
+
+  .icon-style {
+    @apply p-2 m-2 rounded-md hover:bg-emerald-500 duration-300;
+  }
+
+  .icon-size {
+    @apply h-8 w-8;
+  }
+
+  .footer-icon-size {
+    @apply h-6 w-6;
+  }
+  
+  .input-style {
+      @apply w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary;
+  }
+
+  .button-list-style {
+    @apply rounded-full px-2 py-1 flex items-center
+  }
+  
+  .inline-icon {
+    @apply h-4 w-4 mr-1 inline;
+  }
+
+
+}
